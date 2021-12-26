@@ -1,0 +1,26 @@
+.basicPrioritySpan {
+    border-radius: 25px;
+    padding: 5px;
+    color: white;
+    font-size: 12px;
+    width: 30px;
+    height: 10px;
+    margin:2px;
+}
+
+.taskCard {
+
+    span.HIGH {
+        @extend .basicPrioritySpan;
+        background-color: rgb(255, 80, 36);
+       
+    }
+    span.MEDIUM {
+        @extend .basicPrioritySpan;
+        background-color: rgb(255, 190, 93);
+    }
+    span.LOW {
+        @extend .basicPrioritySpan;
+        background-color: rgb(155, 202, 255);
+    } 
+}
