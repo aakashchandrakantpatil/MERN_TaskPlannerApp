@@ -130,7 +130,7 @@ exports.registerUser = (req, res, transporter, EMAIL_SECRET) => {
                                     res.statusCode = 500;
                                     res.send(err);
                                 } else {
-                                    const url = `http://localhost:5000/confirmation/${emailToken}/${id}`;
+                                    const url = `http://localhost:5010/confirmation/${emailToken}/${id}`;
                                     transporter.sendMail({
                                         to: user.username,
                                         subject: 'Confirm Email for Task Planner App',
