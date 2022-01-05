@@ -44,7 +44,15 @@ function Bucket(props) {
                     <Droppable droppableId={props.column.id} type='task'>
                         {(provided, snapshot) => (
                             <TaskList ref={provided.innerRef} {...provided.droppableProps} isDraggingOver={snapshot.isDraggingOver}>
-                                {props.tasks.map((task, index) => <Task setAddTaskResponse={props.setAddTaskResponse} planId={props.planId} key={task._id} task={task} index={index} />)}
+                                {props.tasks.map((task, index) => <Task
+                                planMembers = {props.planMembers} 
+                                setAddTaskResponse={props.setAddTaskResponse} 
+                                planId={props.planId} 
+                                key={task._id} 
+                                task={task} 
+                                index={index}
+                                bucketSelected={props.column.id}
+                                />)}
                                 {provided.placeholder}
                             </TaskList>
                         )}

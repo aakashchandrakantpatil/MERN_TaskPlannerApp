@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Routes, Route , useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import { UserContext } from "../context/UserContext";
 
@@ -18,7 +18,7 @@ const Dashboard = ({ logoutHandler }) => {
     let navigate = useNavigate();
     let pathName = window.location.pathname;
 
-    useEffect(() => {
+    const userPlansAPI = () => {
         fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/${userContext.userId}`, {
             headers: {
                 "Content-Type": "application/json",
@@ -29,11 +29,15 @@ const Dashboard = ({ logoutHandler }) => {
             setUserData(data);
             navigate("/plans");
         })
+    }
+
+    useEffect(() => {
+        userPlansAPI();
     }, [])
 
     const hubHandler = (e) => {
         e.preventDefault();
-        navigate("/plans");
+        userPlansAPI();
     }
 
     const planCreationModalSubmissionHandler = (e) => {
@@ -52,6 +56,9 @@ const Dashboard = ({ logoutHandler }) => {
                 userData.ownedPlans.push(data);
                 document.getElementById('closeBtn').click();
                 setNewPlanName('')
+                if (pathName !== "/plans") {
+                    navigate("/plans")
+                }
             })
     }
 
@@ -66,14 +73,14 @@ const Dashboard = ({ logoutHandler }) => {
         {
             id: "myHubBtn",
             buttonName: "Dashboard",
-            className: `btn-outline-success text-start mt-5 mb-5 ${pathName === "/plans" ? 'active' : null}`,
+            className: `btn btn-outline-success text-start mt-5 mb-5 ${pathName === "/plans" ? 'active' : null}`,
             iconName: "sync-circle",
             onclickHandler: hubHandler,
         },
         {
             id: "createPlanBtn",
             buttonName: "Create Plan",
-            className: "btn-outline-success text-start",
+            className: "btn btn-outline-success text-start",
             iconName: "add",
             modalData: {
                 "toggle": "modal",

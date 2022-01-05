@@ -20,7 +20,7 @@ function Task(props) {
                     ref={provided.innerRef}
                     isDragging={snapshot.isDragging}
                 >
-                    <TaskBox setAddTaskResponse={props.setAddTaskResponse} planId={props.planId} task= {props.task} />
+                    <TaskBox planMembers = {props.planMembers} index={props.index} setAddTaskResponse={props.setAddTaskResponse} planId={props.planId} task={props.task} bucketSelected={props.bucketSelected}/>
                 </Container>
             )}
         </Draggable>

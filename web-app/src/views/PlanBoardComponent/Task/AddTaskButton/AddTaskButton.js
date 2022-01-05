@@ -51,7 +51,7 @@ const AddTaskButton = ({ setAddTaskResponse, ...props }) => {
     let buttonsArray = {
         id: `addTaskBtn_${props.bucketSelected}`,
         buttonName: "Add Task",
-        className: "bg-success btn-sm addTaskBtn ms-3 me-3 text-white",
+        className: "btn bg-success btn-sm addTaskBtn ms-3 me-3 text-white",
         iconName: "add",
         modalData: {
             "toggle": "modal",

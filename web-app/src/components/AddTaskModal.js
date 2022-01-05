@@ -12,7 +12,8 @@ const AddTaskModal = ({
     changeHandler,
     priority,
     setPriority,
-    bucketId
+    bucketId,
+    assignedTo
 }) => {
 
     const [userContext, setUserContext] = useContext(UserContext);
@@ -50,7 +51,7 @@ const AddTaskModal = ({
                                     searchList={planMembers}
                                     shouldIgnoreUser={false}
                                     isMulti={false}
-                                    defaultVal={[]}
+                                    defaultVal={assignedTo !== "" ? assignedTo : []}
                                     onChangeHandler={changeHandler}
                                     disableSelect={false}
                                     placeHolderText={"Assign"}
@@ -61,7 +62,7 @@ const AddTaskModal = ({
                                     className="form-control col"
                                     type="date"
                                     onChange={(e) => setDate(e.target.value)}
-                                    values={date}
+                                    value={date}
                                     required
                                 />
                             </div>
