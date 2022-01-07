@@ -36,9 +36,9 @@ const App = () => {
     })
   }, [setUserContext])
 
-  // useEffect(() => {
-  //   verifyUser()
-  // }, [verifyUser])
+  useEffect(() => {
+    verifyUser()
+  }, [verifyUser])
 
   const logoutHandler = (e) => {
     e.preventDefault();

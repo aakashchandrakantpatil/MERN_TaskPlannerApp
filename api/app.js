@@ -41,7 +41,7 @@ app.use(passport.initialize());
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
     app.use(express.static('web-app/build'));
-
+    const path = require("path");
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'web-app', 'build', 'index.html'));
     });
