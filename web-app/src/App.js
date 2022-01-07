@@ -13,7 +13,7 @@ const App = () => {
   let navigate = useNavigate();
 
   const verifyUser = useCallback(() => {
-    fetch(process.env.REACT_APP_API_ENDPOINT + "/refreshToken", {
+    fetch("/refreshToken", {
       method: "POST",
       credentials: "include",
       headers: {

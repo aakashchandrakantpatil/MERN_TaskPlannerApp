@@ -92,7 +92,7 @@ Blur handlers for Password
 
         const genericErrorMessage = "Something went wrong! Please try again later."
 
-        fetch(process.env.REACT_APP_API_ENDPOINT + "/signup", {
+        fetch("/signup", {
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
