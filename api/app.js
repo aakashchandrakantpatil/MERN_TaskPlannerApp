@@ -30,7 +30,7 @@ const corsOptions = {
 };
 
 // executes each middleware in sequence to the application
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
