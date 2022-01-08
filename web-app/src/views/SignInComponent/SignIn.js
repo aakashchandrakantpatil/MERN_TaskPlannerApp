@@ -24,7 +24,7 @@ const SignIn = ({ setStartPage }) => {
         /**
          * Fetch API call to fetch response from /login endpoint
          */
-        fetch(process.env.REACT_APP_API_ENDPOINT + "/login", {
+        fetch("https://agile-lowlands-66884.herokuapp.com" + "/login", {
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },

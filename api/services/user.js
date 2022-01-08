@@ -130,7 +130,7 @@ exports.registerUser = (req, res, transporter, EMAIL_SECRET) => {
                                     res.statusCode = 500;
                                     res.send(err);
                                 } else {
-                                    const url = `http://localhost:5000/confirmation/${emailToken}/${id}`;
+                                    const url = `https://agile-lowlands-66884.herokuapp.com/confirmation/${emailToken}/${id}`;
                                     transporter.sendMail({
                                         to: user.username,
                                         subject: 'Confirm Email for Task Planner App',
@@ -285,5 +285,5 @@ exports.emailConfirmation = (req, res, EMAIL_SECRET) => {
         res.send('error');
     }
 
-    return res.redirect('http://localhost:3000/');
+    return res.redirect("https://agile-lowlands-66884.herokuapp.com");
 }
