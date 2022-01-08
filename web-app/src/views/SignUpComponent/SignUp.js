@@ -92,7 +92,7 @@ Blur handlers for Password
 
         const genericErrorMessage = "Something went wrong! Please try again later."
 
-        fetch("http://localhost:5000/signup", {
+        fetch("https://agile-lowlands-66884.herokuapp.com" + ":" + process.env.PORT + "/signup", {
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
