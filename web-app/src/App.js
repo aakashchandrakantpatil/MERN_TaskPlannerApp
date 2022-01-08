@@ -13,7 +13,7 @@ const App = () => {
   let navigate = useNavigate();
 
   const verifyUser = useCallback(() => {
-    fetch("https://agile-lowlands-66884.herokuapp.com:" + process.env.PORT + "/refreshToken", {
+    fetch("http://localhost:5000/refreshToken", {
       method: "POST",
       credentials: "include",
       headers: {
