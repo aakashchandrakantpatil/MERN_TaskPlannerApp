@@ -25,7 +25,7 @@ const AddTaskButton = ({ setAddTaskResponse, ...props }) => {
             priority: priority
         }
 
-        fetch(process.env.REACT_APP_API_ENDPOINT + "/tasks", {
+        fetch("https://agile-lowlands-66884.herokuapp.com" + "/tasks", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

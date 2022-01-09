@@ -33,7 +33,7 @@ const TaskBox = (props) => {
             priority: priority
         }
 
-        fetch(process.env.REACT_APP_API_ENDPOINT + `/tasks/${props.task._id}`, {
+        fetch("https://agile-lowlands-66884.herokuapp.com" + `/tasks/${props.task._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const TaskBox = (props) => {
         e.preventDefault();
         // call delete task API from backend
         // deletes task object, removes task from plan
-        fetch(process.env.REACT_APP_API_ENDPOINT + `/tasks/${props.task._id}`, {
+        fetch("https://agile-lowlands-66884.herokuapp.com" + `/tasks/${props.task._id}`, {
             method: "Delete",
             headers: {
                 "Authorization": `Bearer ${userContext.token}`,

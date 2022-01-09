@@ -12,7 +12,7 @@ const PlanHeader = (props) => {
 
     // call api to add or delete member from a plan
     const callApiToUpdateMember = (planId, memberId, method) => {
-        fetch(process.env.REACT_APP_API_ENDPOINT + `/plans/${planId}/member/${memberId}`, {
+        fetch("https://agile-lowlands-66884.herokuapp.com" + `/plans/${planId}/member/${memberId}`, {
             method: method,
             headers: {
                 "Authorization": `Bearer ${userContext.token}`,

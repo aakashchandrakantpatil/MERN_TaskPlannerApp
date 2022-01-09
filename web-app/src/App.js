@@ -42,7 +42,7 @@ const App = () => {
 
   const logoutHandler = (e) => {
     e.preventDefault();
-    fetch(process.env.REACT_APP_API_ENDPOINT + "/logout", {
+    fetch("https://agile-lowlands-66884.herokuapp.com" + "/logout", {
       credentials: "include",
       headers: {
         "Content-Type": "application/json",

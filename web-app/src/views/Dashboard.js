@@ -19,7 +19,7 @@ const Dashboard = ({ logoutHandler }) => {
     let pathName = window.location.pathname;
 
     const userPlansAPI = () => {
-        fetch(`${process.env.REACT_APP_API_ENDPOINT}/users/${userContext.userId}`, {
+        fetch(`https://agile-lowlands-66884.herokuapp.com/users/${userContext.userId}`, {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${userContext.token}`,
@@ -43,7 +43,7 @@ const Dashboard = ({ logoutHandler }) => {
     const planCreationModalSubmissionHandler = (e) => {
         e.preventDefault();
 
-        fetch(process.env.REACT_APP_API_ENDPOINT + "/plans", {
+        fetch("https://agile-lowlands-66884.herokuapp.com" + "/plans", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

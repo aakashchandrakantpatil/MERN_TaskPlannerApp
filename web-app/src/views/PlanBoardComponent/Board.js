@@ -20,7 +20,7 @@ const Board = () => {
   let params = useParams();
 
   const fetchUpdatedPlanData = async () => {
-    return await axios.get(process.env.REACT_APP_API_ENDPOINT + `/plans/${params.id}`, {
+    return await axios.get("https://agile-lowlands-66884.herokuapp.com" + `/plans/${params.id}`, {
       headers: {
         "Authorization": `Bearer ${userContext.token}`,
         "Content-Type": "application/json"
@@ -29,7 +29,7 @@ const Board = () => {
   }
 
   const fetchAllUsers = async () => {
-    return await axios.get(process.env.REACT_APP_API_ENDPOINT + "/users", {
+    return await axios.get("https://agile-lowlands-66884.herokuapp.com" + "/users", {
       headers: {
         "Authorization": `Bearer ${userContext.token}`,
         "Content-Type": "application/json"
@@ -70,7 +70,7 @@ const Board = () => {
     console.log("Add Task" + taskId + "To Bucket " + destinationBucketId);
 
     // update task with destination bucket
-    fetch(process.env.REACT_APP_API_ENDPOINT + `/tasks/${taskId}`, {
+    fetch("https://agile-lowlands-66884.herokuapp.com" + `/tasks/${taskId}`, {
       method: 'PUT',
       headers: {
         "Authorization": `Bearer ${userContext.token}`,
